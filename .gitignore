@@ -1,0 +1,8 @@
+# Ignore output files
+word_search/allowed/*
+word_search/filtered/*
+
+# Allow dict.txt
+!word_search/dicts/
+word_search/dicts/*
+!word_search/dicts/dict.txt
