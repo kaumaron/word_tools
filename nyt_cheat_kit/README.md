@@ -29,3 +29,8 @@ of words that meet the criteria in order of longest to shortest (presumably high
 lowest score). The non-common, non-proper and non-curse word rules aren't applied. 
 That's an exercise left to the user. (I also didn't want to use another tool to get the 
 frequency of words to determine non-common.)
+
+## Mini
+
+Straight up looks for the answers from https://word.tips/todays-nyt-mini-crossword-clues-answers/. Will provide the answers in order, grouped by 
+ACROSS and DOWN.
