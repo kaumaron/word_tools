@@ -1,4 +1,5 @@
 import argparse
+import json
 
 parser = argparse.ArgumentParser(
     prog="word_search",
@@ -39,6 +40,14 @@ parser.add_argument(
     "--checkpoint",
     action="store_true",
     help="Bool for if checkpoints should be saved.",
+    default=False,
+    required=False,
+)
+parser.add_argument(
+    "-f",
+    "--freq",
+    action="store_true",
+    help="Bool for if frequency should be accounted for",
     default=False,
     required=False,
 )
@@ -147,6 +156,19 @@ for word in allowed_words:
 
 # remove dups
 filtered_words = list(set(filtered_words))
+
+if args.freq:
+    with open("dicts/dict.json") as json_dict:
+        freq_dict = json.load(json_dict)
+    words_w_freqs = []
+    for word in filtered_words:
+        try:
+            words_w_freqs.append((word, freq_dict[word]))
+        except KeyError:
+            words_w_freqs.append((word, 0.0))
+    filtered_words = [
+        w[0] for w in sorted(words_w_freqs, key=lambda x: x[1], reverse=True)
+    ]
 
 if args.checkpoint:
     with open(
