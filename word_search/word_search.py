@@ -15,7 +15,9 @@ parser.add_argument(
     "-c",
     "--correct",
     help="Put known letters in the word in their"
-    " location separated by `-` for unknowns.",
+    " location separated by `-` for unknowns."
+    " If first character is a `-` you need to use"
+    " an equal sign e.g., -c=-i---",
     required=False,
 )
 parser.add_argument(
